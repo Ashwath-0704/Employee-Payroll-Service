@@ -57,8 +57,8 @@ public class emplyPayRollMain {
 	}
 
 	/*
-	 * UC3 : Create a Watch Service to watch particular directory along with all Files
-	 * and Sub Directories - Using File IO Count Number of Entries in the File
+	 * UC3 : Create a Watch Service to watch particular directory along with all
+	 * Files and Sub Directories - Using File IO Count Number of Entries in the File
 	 */
 	public static void findFilesWithExtension(String string) {
 		try (Stream<Path> walk = Files.walk(Paths.get(string))) {
@@ -73,7 +73,7 @@ public class emplyPayRollMain {
 	}
 
 	/*
-	 * UC4 - UC6
+	 * UC4 :- Employee Payroll Service to store Employee Payroll into a File
 	 */
 	public static boolean addEmpyPayRollIntoFile() throws IOException {
 		addReadEmpyPayRoll();
@@ -95,6 +95,13 @@ public class emplyPayRollMain {
 		return true;
 	}
 
+	/*UC5
+	 * Count the number of entries made inside file
+	 */
+	public static long countEntires() throws IOException {
+		long entries = Files.lines(new File(FILE_PATH).toPath()).count();
+		return entries;
+	}
 
 	public static void main(String[] args) {
 		addFileDelectFileOperation();

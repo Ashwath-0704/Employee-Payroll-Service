@@ -25,4 +25,11 @@ public class emplyPayRollTest {
 		boolean c = emplyPayRollMain.addFileDelectFileOperation();
 		Assert.assertEquals(true, c);
 	}
+
+	@Test
+	public void readEmpyPayRollFromFileTest() throws IOException {
+		emplyPayRollMain.addEmpyPayRollIntoFile();
+		long countEntries = emplyPayRollMain.countEntires();
+		Assert.assertEquals(3, countEntries);
+	}
 }
