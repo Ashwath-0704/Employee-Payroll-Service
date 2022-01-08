@@ -27,8 +27,16 @@ public class emplyPayRollTest {
 	}
 
 	@Test
+	public void countEntriesMadeEmpyPayRollIntoFileTest() throws IOException {
+		emplyPayRollMain.addEmpyPayRollIntoFile();
+		long countEntries = emplyPayRollMain.countEntires();
+		Assert.assertEquals(3, countEntries);
+	}
+
+	@Test
 	public void readEmpyPayRollFromFileTest() throws IOException {
 		emplyPayRollMain.addEmpyPayRollIntoFile();
+		emplyPayRollMain.printData();
 		long countEntries = emplyPayRollMain.countEntires();
 		Assert.assertEquals(3, countEntries);
 	}

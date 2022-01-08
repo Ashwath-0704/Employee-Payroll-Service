@@ -95,12 +95,19 @@ public class emplyPayRollMain {
 		return true;
 	}
 
-	/*UC5
-	 * Count the number of entries made inside file
+	/*
+	 * UC5 Count the number of entries made inside file
 	 */
 	public static long countEntires() throws IOException {
 		long entries = Files.lines(new File(FILE_PATH).toPath()).count();
 		return entries;
+	}
+
+	/*
+	 * UC6 Read the data for File
+	 */
+	public static void printData() throws IOException {
+		Files.lines(new File(FILE_PATH).toPath()).map(Line -> Line.trim()).forEach(line -> System.out.println(line));
 	}
 
 	public static void main(String[] args) {
