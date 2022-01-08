@@ -22,7 +22,7 @@ public class emplyPayRollTest {
 
 	@Test
 	public void readEmpyPayRollTosFileTest() throws IOException {
-		boolean c = emplyPayRollMain.addFileDelectFileOperation();
+		boolean c = emplyPayRollMain.addFileDelectFileOperation("output.txt");
 		Assert.assertEquals(true, c);
 	}
 	@Test
