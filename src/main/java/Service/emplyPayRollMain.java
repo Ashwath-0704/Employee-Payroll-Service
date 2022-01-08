@@ -57,8 +57,8 @@ public class emplyPayRollMain {
 	}
 
 	/*
-	 * UC3 : Create a Watch Service to watch particular directory along with all
-	 * Files and Sub Directories - Using File IO Count Number of Entries in the File
+	 * UC3 : Create a Watch Service to watch particular directory along with all Files
+	 * and Sub Directories - Using File IO Count Number of Entries in the File
 	 */
 	public static void findFilesWithExtension(String string) {
 		try (Stream<Path> walk = Files.walk(Paths.get(string))) {
@@ -70,5 +70,34 @@ public class emplyPayRollMain {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	/*
+	 * UC4 - UC6
+	 */
+	public static boolean addEmpyPayRollIntoFile() throws IOException {
+		addReadEmpyPayRoll();
+		addArrayListInToFile(emplyDate);
+		return true;
+	}
+
+	public static <T> boolean addArrayListInToFile(ArrayList<T> emplyDate) throws IOException {
+		FileWriter writer = new FileWriter(FILE_PATH);
+		emplyDate.forEach(data -> {
+			try {
+				writer.write(data + System.lineSeparator());
+			} catch (IOException e) {
+				e.printStackTrace();
+				System.err.println("Invaid input");
+			}
+		});
+		writer.close();
+		return true;
+	}
+
+
+	public static void main(String[] args) {
+		addFileDelectFileOperation();
+		findFilesWithExtension("C:\\Users\\hp\\OneDrive\\BridgeLabz\\eclipse-workspace\\EmplyPayRollNew\\src\\main");
 	}
 }
