@@ -15,13 +15,11 @@ import Model.emplyPayRoll;
 
 public class emplyPayRollMain {
 	final static String FILE_PATH = "C:\\Users\\hp\\OneDrive\\BridgeLabz\\eclipse-workspace\\EmplyPayRollNew\\src\\main\\EmployeePayrollServiceOutput.txt";
-
-	public enum IOService {
-		CONSOLE_IO, FILE_IO, DB_IO, REST_IO
-	}
-
 	static ArrayList<emplyPayRoll> emplyDate = new ArrayList<>();
-
+	
+	/*
+	* UC1 :- Create an Employee Payroll Service to Read and Write Employee Payroll to a Console
+	*/
 	public static boolean addReadEmpyPayRoll() {
 		emplyPayRoll emply1 = new emplyPayRoll("ashwath", 1, 2500);
 		emplyPayRoll emply2 = new emplyPayRoll("krishna", 2, 25000);
@@ -35,13 +33,12 @@ public class emplyPayRollMain {
 	}
 
 	/*
-	 * UC2 and UC3
-	 * 
+	 * UC2 :- Write a program to demonstrate File Operations like
+	 * Check File Exists
+	 * Delete File and Check File Not Exist
 	 */
 	public static boolean addFileDelectFileOperation() {
-		File f = new File(
-				"C:\\Users\\hp\\OneDrive\\BridgeLabz\\eclipse-workspace\\EmplyPayRollNew\\src\\main\\Output1.txt");
-
+		File f = new File("C:\\Users\\hp\\OneDrive\\BridgeLabz\\eclipse-workspace\\EmplyPayRollNew\\src\\main\\Output1.txt");
 		if (f.exists()) {
 			f.deleteOnExit();
 			System.out.println("File has deleted ");
@@ -80,7 +77,10 @@ public class emplyPayRollMain {
 		addArrayListInToFile(emplyDate);
 		return true;
 	}
-
+	
+	/*
+	 *  Add the arraylist data into the file
+	 */
 	public static <T> boolean addArrayListInToFile(ArrayList<T> emplyDate) throws IOException {
 		FileWriter writer = new FileWriter(FILE_PATH);
 		emplyDate.forEach(data -> {
