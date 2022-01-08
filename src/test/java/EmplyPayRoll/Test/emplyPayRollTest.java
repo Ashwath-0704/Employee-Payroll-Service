@@ -10,7 +10,7 @@ import Service.emplyPayRollMain;
  */
 public class emplyPayRollTest {
 	/**
-	 * Rigorous Test :-)
+	 * Rigorous Test
 	 * 
 	 * @throws IOException
 	 */

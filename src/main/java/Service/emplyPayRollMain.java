@@ -104,7 +104,7 @@ public class emplyPayRollMain {
 	}
 
 	/*
-	 * UC6 Read the data for File
+	 * UC6 Read the data for File.
 	 */
 	public static void printData() throws IOException {
 		Files.lines(new File(FILE_PATH).toPath()).map(Line -> Line.trim()).forEach(line -> System.out.println(line));
