@@ -56,4 +56,19 @@ public class emplyPayRollMain {
 		return true;
 	}
 
+	/*
+	 * UC3 : Create a Watch Service to watch particular directory along with all
+	 * Files and Sub Directories - Using File IO Count Number of Entries in the File
+	 */
+	public static void findFilesWithExtension(String string) {
+		try (Stream<Path> walk = Files.walk(Paths.get(string))) {
+			List<String> result = walk.filter(p -> !Files.isDirectory(p)) // not a directory
+					.map(p -> p.toString().toLowerCase()) // convert path to string
+					.filter(f1 -> f1.endsWith("txt")) // check end with
+					.collect(Collectors.toList()); // collect all matched to a List
+			System.out.println(result);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

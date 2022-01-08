@@ -14,15 +14,15 @@ public class emplyPayRollTest {
 	 * 
 	 * @throws IOException
 	 */
+//	@Test
+//	public void readEmpyPayRollTest() {
+//		boolean addedemply = emplyPayRollMain.addReadEmpyPayRoll();
+//		Assert.assertEquals(true, addedemply);
+//	}
 	@Test
-	public void readEmpyPayRollTest() {
-		boolean addedemply = emplyPayRollMain.addReadEmpyPayRoll();
-		Assert.assertEquals(true, addedemply);
-	}
-
-	@Test
-	public void readEmpyPayRollFromFileTest() throws IOException {
+	public void readEmpyPayRollTosFileTest() throws IOException {
 		boolean c= emplyPayRollMain.addFileDelectFileOperation();
 		Assert.assertEquals(true, c);
 	}
+	
 }
