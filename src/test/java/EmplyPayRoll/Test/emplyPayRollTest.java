@@ -1,0 +1,22 @@
+package EmplyPayRoll.Test;
+
+import java.io.IOException;
+import org.junit.Assert;
+import org.junit.Test;
+import Service.emplyPayRollMain;
+
+/**
+ * Unit test for simple App.
+ */
+public class emplyPayRollTest {
+	/**
+	 * Rigorous Test :-)
+	 * 
+	 * @throws IOException
+	 */
+	@Test
+	public void readEmpyPayRollTest() {
+		boolean addedemply = emplyPayRollMain.addReadEmpyPayRoll();
+		Assert.assertEquals(true, addedemply);
+	}
+}
