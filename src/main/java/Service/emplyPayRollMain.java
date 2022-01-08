@@ -37,8 +37,8 @@ public class emplyPayRollMain {
 	 * Check File Exists
 	 * Delete File and Check File Not Exist
 	 */
-	public static boolean addFileDelectFileOperation() {
-		File f = new File("C:\\Users\\hp\\OneDrive\\BridgeLabz\\eclipse-workspace\\EmplyPayRollNew\\src\\main\\Output1.txt");
+	public static boolean addFileDelectFileOperation(String filname) {
+		File f = new File("C:\\Users\\hp\\OneDrive\\BridgeLabz\\eclipse-workspace\\EmplyPayRollNew\\src\\main\\"+filname);
 		if (f.exists()) {
 			f.deleteOnExit();
 			System.out.println("File has deleted ");
