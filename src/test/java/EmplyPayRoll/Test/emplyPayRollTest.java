@@ -25,7 +25,11 @@ public class emplyPayRollTest {
 		boolean c = emplyPayRollMain.addFileDelectFileOperation();
 		Assert.assertEquals(true, c);
 	}
-
+	@Test
+	public void findFilesInsideFolderTest() throws IOException {
+		boolean files =	emplyPayRollMain.findFilesWithExtension("C:\\Users\\hp\\OneDrive\\BridgeLabz\\eclipse-workspace\\EmplyPayRollNew\\src\\main");
+		Assert.assertEquals(true, files);
+	}
 	@Test
 	public void countEntriesMadeEmpyPayRollIntoFileTest() throws IOException {
 		emplyPayRollMain.addEmpyPayRollIntoFile();
