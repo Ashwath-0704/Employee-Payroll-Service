@@ -33,4 +33,27 @@ public class emplyPayRollMain {
 		emplyDate.size();
 		return true;
 	}
+
+	/*
+	 * UC2 and UC3
+	 * 
+	 */
+	public static boolean addFileDelectFileOperation() {
+		File f = new File(
+				"C:\\Users\\hp\\OneDrive\\BridgeLabz\\eclipse-workspace\\EmplyPayRollNew\\src\\main\\Output1.txt");
+
+		if (f.exists()) {
+			f.deleteOnExit();
+			System.out.println("File has deleted ");
+		} else {
+			try {
+				f.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			System.out.println("File have created");
+		}
+		return true;
+	}
+
 }

@@ -19,4 +19,10 @@ public class emplyPayRollTest {
 		boolean addedemply = emplyPayRollMain.addReadEmpyPayRoll();
 		Assert.assertEquals(true, addedemply);
 	}
+
+	@Test
+	public void readEmpyPayRollFromFileTest() throws IOException {
+		boolean c= emplyPayRollMain.addFileDelectFileOperation();
+		Assert.assertEquals(true, c);
+	}
 }
