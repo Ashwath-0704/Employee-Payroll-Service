@@ -15,11 +15,6 @@ import Model.emplyPayRoll;
 
 public class emplyPayRollMain {
 	final static String FILE_PATH = "C:\\Users\\hp\\OneDrive\\BridgeLabz\\eclipse-workspace\\EmplyPayRollNew\\src\\main\\EmployeePayrollServiceOutput.txt";
-
-	public enum IOService {
-		CONSOLE_IO, FILE_IO, DB_IO, REST_IO
-	}
-
 	static ArrayList<emplyPayRoll> emplyDate = new ArrayList<>();
 
 	public static boolean addReadEmpyPayRoll() {
@@ -38,10 +33,8 @@ public class emplyPayRollMain {
 	 * UC2 and UC3
 	 * 
 	 */
-	public static boolean addFileDelectFileOperation() {
-		File f = new File(
-				"C:\\Users\\hp\\OneDrive\\BridgeLabz\\eclipse-workspace\\EmplyPayRollNew\\src\\main\\Output1.txt");
-
+	public static boolean addFileDelectFileOperation(String filname) {
+		File f = new File("C:\\Users\\hp\\OneDrive\\BridgeLabz\\eclipse-workspace\\EmplyPayRollNew\\src\\main\\"+filname);
 		if (f.exists()) {
 			f.deleteOnExit();
 			System.out.println("File has deleted ");
